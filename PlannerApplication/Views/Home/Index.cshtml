@@ -1,8 +1,27 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model DateTime
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Planner App</title>
+</head>
+<body>
+    <h1>Welcome to the Planner App!</h1>
+    <p>Current date and time: @Model.ToString("yyyy-MM-dd HH:mm:ss")</p>
+
+    <!-- Display reminders (if any) -->
+    @if (Model.Day == DateTime.Today.Day)
+    {
+        <h2>Today's Reminders:</h2>
+        <ul>
+            <li>Reminder 1</li>
+            <li>Reminder 2</li>
+            <!-- Add more reminders dynamically -->
+        </ul>
+    }
+    else
+    {
+        <p>No reminders for today.</p>
+    }
+</body>
+</html>

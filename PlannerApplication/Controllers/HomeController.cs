@@ -6,10 +6,12 @@ namespace PlannerApplication.Controllers
 {
     public class HomeController : Controller
     {
-    
+
         public IActionResult Index()
         {
-            return View();
+            // Pass the current date and time to the view
+            var currentDate = DateTime.Now;
+            return View(currentDate);
         }
 
         public IActionResult Privacy()
