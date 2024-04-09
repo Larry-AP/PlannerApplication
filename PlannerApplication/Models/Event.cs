@@ -1,6 +1,6 @@
 ﻿namespace PlannerApplication.Models
 {
-    public class UserModel
+    public class Event
     {
     }
 }

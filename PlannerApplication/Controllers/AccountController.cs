@@ -2,7 +2,7 @@
 
 namespace PlannerApplication.Controllers
 {
-    public class NotesController : Controller
+    public class AccountController : Controller
     {
         public IActionResult Index()
         {
