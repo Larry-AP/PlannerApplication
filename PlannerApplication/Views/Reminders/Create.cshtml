@@ -1,5 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model PlannerApplication.Models.Reminders
+
+<h1>Create New Reminder</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Title:</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Description:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Date:</label>
+        <input asp-for="Date" type="datetime-local" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

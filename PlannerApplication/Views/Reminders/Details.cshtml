@@ -1,6 +1,6 @@
 ﻿@model PlannerApplication.Models.Reminders
 
-<h1>Delete Reminder</h1>
+<h1>Reminder Details</h1>
 
 <div>
     <h4>Title:</h4>
@@ -15,8 +15,4 @@
     <p>@Model.Date.ToString("yyyy-MM-dd HH:mm")</p>
 </div>
 
-<form asp-action="Delete">
-    <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
+<a asp-action="Index" class="btn btn-primary">Back to List</a>

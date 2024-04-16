@@ -24,4 +24,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+//Route for reminders
+app.MapControllerRoute(
+            name: "reminders",
+            pattern: "Reminders/{action=Index}/{id?}",
+            defaults: new { controller = "Reminders" });
+
 app.Run();
