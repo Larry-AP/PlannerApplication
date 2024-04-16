@@ -2,7 +2,7 @@
 
 namespace PlannerApplication.Models
 {
-    public class Event
+    public class Event : IEvent
     {
         public int Id { get; set; }
 

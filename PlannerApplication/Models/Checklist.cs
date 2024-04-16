@@ -2,7 +2,7 @@
 
 namespace PlannerApplication.Models
 {
-    public class Checklist
+    public class Checklist : IChecklist
     {
         public int Id { get; set; }
 

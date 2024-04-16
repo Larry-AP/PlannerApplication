@@ -2,7 +2,7 @@
 
 namespace PlannerApplication.Models
 {
-    public class Reminders
+    public class Reminders : IReminders
     {
         public int Id { get; set; }
 
