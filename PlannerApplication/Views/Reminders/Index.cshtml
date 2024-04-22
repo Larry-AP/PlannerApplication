@@ -1,5 +1,38 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<PlannerApplication.Models.Reminders>
+
+<h1>Reminders</h1>
+
+@if (Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reminder in Model)
+            {
+                <tr>
+                    <td>@reminder.Title</td>
+                    <td>@reminder.Description</td>
+                    <td>@reminder.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>
+                        <a href="@Url.Action("Details", "Reminders", new { id = reminder.Id })">Details</a> |
+                        <a href="@Url.Action("Edit", "Reminders", new { id = reminder.Id })">Edit</a> |
+                        <a href="@Url.Action("Delete", "Reminders", new { id = reminder.Id })">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
+else
+{
+    <p>No reminders found.</p>
+}
+
+<a href="@Url.Action("Create", "Reminders")" class="btn btn-primary">Add New Reminder</a>
