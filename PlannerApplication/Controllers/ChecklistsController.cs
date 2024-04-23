@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PlannerApplication.Data;
 using PlannerApplication.Models;
 
 namespace PlannerApplication.Controllers
@@ -8,9 +9,9 @@ namespace PlannerApplication.Controllers
     {
         //Come back and change to DbContext file name
 
-        private readonly YourDbContext _context;
+        private readonly PlannerApplicationDbContext _context;
 
-        public ChecklistsController(YourDbContext context)
+        public ChecklistsController(PlannerApplicationDbContext context)
         {
             _context = context;
         }
@@ -147,3 +148,4 @@ namespace PlannerApplication.Controllers
             return _context.Checklists.Any(e => e.Id == id);
         }
     }
+}
