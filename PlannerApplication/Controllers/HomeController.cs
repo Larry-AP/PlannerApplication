@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PlannerApplication.Data;
 using PlannerApplication.Models;
 using System.Diagnostics;
@@ -54,4 +55,5 @@ namespace PlannerApplication.Controllers
             public IEnumerable<User> Users { get; set; }
         }
     }
+
 }

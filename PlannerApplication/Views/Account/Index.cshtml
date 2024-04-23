@@ -1,0 +1,23 @@
+﻿
+@model PlannerApplication.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, @Model.FullName!</h1>
+    <p>Your Account Details:</p>
+    <ul>
+        <li>Full Name: @Model.FullName</li>
+        <li>User ID: @Model.Id</li>
+        <!-- Add more user details as needed -->
+    </ul>
+
+    <!-- Add links to account actions -->
+    <div>
+        <a asp-action="Logout" asp-controller="Account">Logout</a>
+    </div>
+</body>
+</html>

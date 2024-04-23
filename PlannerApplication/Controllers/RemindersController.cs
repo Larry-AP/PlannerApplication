@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PlannerApplication.Models;
+using PlannerApplication.Data;
 
 namespace PlannerApplication.Controllers
 {
     public class RemindersController : Controller
     {
         //Come back and change to DbContext file name
-        private readonly ApplicationDbContext _context;
+        private readonly PlannerApplicationDbContext _context;
 
-        public RemindersController(ApplicationDbContext context)
+        public RemindersController(PlannerApplicationDbContext context)
         {
             _context = context;
         }

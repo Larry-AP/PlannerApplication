@@ -1,4 +1,4 @@
-﻿@model DateTime
+﻿@model PlannerApplication.Models.IndexViewModel
 
 <!DOCTYPE html>
 <html>
@@ -7,32 +7,34 @@
 </head>
 <body>
     <h1>Welcome to the Planner App!</h1>
-    <p>Current date and time: @Model.ToString("yyyy-MM-dd HH:mm:ss")</p>
+    <p>Current date and time: @DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</p>
 
     <!-- Display reminders (if any) -->
-    @if (Model.Day == DateTime.Today.Day)
+    @if (Model.Reminders != null && Model.Reminders.Any())
     {
         <h2>Today's Reminders:</h2>
         <ul>
-            <li>Reminder 1</li>
-            <li>Reminder 2</li>
-            <!-- Add more reminders dynamically -->
+            @foreach (var reminder in Model.Reminders)
+            {
+                <li>@reminder.Title - @reminder.Description</li>
+            }
         </ul>
     }
     else
     {
         <p>No reminders for today.</p>
     }
-    <div>
-    <!-- Link to view reminders -->
-    <a href="~/Reminders/Index">View Reminders</a>
-    <!-- Link to create a new reminder -->
-    <a href="~/Reminders/Create">Create New Reminder</a>
 
-    <!-- Link to view checklists -->
-    <a href="~/Checklists/Index">View Checklists</a>
-    <!-- Link to create a new checklist -->
-    <a href="~/Checklists/Create">Create New Checklist</a>
+    <div>
+        <!-- Link to view all reminders -->
+        <a asp-action="Index" asp-controller="Reminders">View All Reminders</a>
+        <!-- Link to create a new reminder -->
+        <a asp-action="Create" asp-controller="Reminders">Create New Reminder</a>
+
+        <!-- Link to view all checklists -->
+        <a asp-action="Index" asp-controller="Checklists">View All Checklists</a>
+        <!-- Link to create a new checklist -->
+        <a asp-action="Create" asp-controller="Checklists">Create New Checklist</a>
     </div>
 </body>
 </html>
