@@ -14,7 +14,7 @@ namespace PlannerApplication.Controllers
 
         public IActionResult Index()
         {
-\            var userId = User.Identity.Name;
+            var userId = User.Identity.Name;
             var user = _context.Users.FirstOrDefault(u => u.Id == userId);
 
             if (user == null)
@@ -41,7 +41,7 @@ namespace PlannerApplication.Controllers
 
         public IActionResult Logout()
         {
-\            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

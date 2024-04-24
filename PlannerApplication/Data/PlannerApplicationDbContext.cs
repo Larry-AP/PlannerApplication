@@ -6,12 +6,12 @@ namespace PlannerApplication.Data
     public class PlannerApplicationDbContext : DbContext
     {
         public PlannerApplicationDbContext(DbContextOptions<PlannerApplicationDbContext> options) : base(options) { }
-        
-        public DbSet<User> Users { get; set; }
-        public DbSet<Checklist> Checklists { get; set; }
-        public DbSet<Reminders> Reminders { get; set; }
 
-        public DbSet<Event> Events { get; set; }
+        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<Checklist> Checklists { get; set; } = null!;
+        public DbSet<Reminders> Reminders { get; set; } = null!;
+
+        public DbSet<Event> Events { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
