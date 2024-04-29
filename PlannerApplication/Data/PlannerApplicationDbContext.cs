@@ -5,7 +5,8 @@ namespace PlannerApplication.Data
 {
     public class PlannerApplicationDbContext : DbContext
     {
-        public PlannerApplicationDbContext(DbContextOptions<PlannerApplicationDbContext> options) : base(options) { }
+        public PlannerApplicationDbContext(DbContextOptions<PlannerApplicationDbContext> options) 
+            : base(options) { }
 
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Checklist> Checklists { get; set; } = null!;

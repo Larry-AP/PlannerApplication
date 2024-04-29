@@ -18,9 +18,6 @@ public class Program
         builder.Services.AddTransient<IEvent, Event>();
         builder.Services.AddTransient<IReminders, Reminders>();
 
-        // Configuring DI
-        // builder.Services.AddTransient<I>
-        
         // Add EF Core DI
         builder.Services.AddDbContext<PlannerApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PlannerApplicationDbContext")));
 

@@ -9,16 +9,20 @@ namespace PlannerApplication.Controllers
     public class HomeController : Controller
     {
 
+        private PlannerApplicationDbContext context;
+
+        public HomeController(PlannerApplicationDbContext ctx) => context = ctx;
+        
         public IActionResult Index()
         {
             // Pass the current date and time to the view
-            /*var currentDate = DateTime.Now;
-            return View(currentDate);*/
+            var currentDate = DateTime.Now;
+            return View(currentDate);
 
             // Pass SQL data to view
             var model = new HomePageViewModel();
 
-            using (var context = new PlannerApplicationDbContext())
+            //using (var context = new PlannerApplicationDbContext())
             {
                 SQLUserData sqlData = new SQLUserData(context);
                 model.Users = sqlData.GetAll();
