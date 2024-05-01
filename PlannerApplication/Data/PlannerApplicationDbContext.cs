@@ -20,8 +20,9 @@ namespace PlannerApplication.Data
             List<string> SecondList = new List<string> { "Advanced C#", "Final project" };
 
             modelBuilder.Entity<User>().HasData(
-                new User { Id = "austin2024", FullName = "Austin Johnson" },
-                new User { Id = "ben.j.smith99", FullName = "Ben Smith" }
+                new User { Id = "austin2024", FullName = "Austin Johnson", Password = "4321" },
+                new User { Id = "ben.j.smith99", FullName = "Ben Smith", Password = "1234" }
+                // new User { Id = "smarquis", FullName = "Skyler Marquis", Password = "IloveC#" }
                 );
             modelBuilder.Entity<ChecklistItem>().HasData(
                 new ChecklistItem { Id = 100, Description = "Take trash out", IsCompleted = true },

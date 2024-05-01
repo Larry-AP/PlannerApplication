@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlannerApplication.Data;
 
@@ -11,9 +12,10 @@ using PlannerApplication.Data;
 namespace PlannerApplication.Migrations
 {
     [DbContext(typeof(PlannerApplicationDbContext))]
-    partial class PlannerApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240501040847_AzureMigration")]
+    partial class AzureMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,10 +150,6 @@ namespace PlannerApplication.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -160,14 +158,12 @@ namespace PlannerApplication.Migrations
                         new
                         {
                             Id = "austin2024",
-                            FullName = "Austin Johnson",
-                            Password = "4321"
+                            FullName = "Austin Johnson"
                         },
                         new
                         {
                             Id = "ben.j.smith99",
-                            FullName = "Ben Smith",
-                            Password = "1234"
+                            FullName = "Ben Smith"
                         });
                 });
 

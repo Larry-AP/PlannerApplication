@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlannerApplication.Data;
 
@@ -11,9 +12,10 @@ using PlannerApplication.Data;
 namespace PlannerApplication.Migrations
 {
     [DbContext(typeof(PlannerApplicationDbContext))]
-    partial class PlannerApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240501051111_AzureInitial")]
+    partial class AzureInitial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,6 +170,12 @@ namespace PlannerApplication.Migrations
                             Id = "ben.j.smith99",
                             FullName = "Ben Smith",
                             Password = "1234"
+                        },
+                        new
+                        {
+                            Id = "smarquis",
+                            FullName = "Skyler Marquis",
+                            Password = "IloveC#"
                         });
                 });
 
