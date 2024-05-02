@@ -33,7 +33,6 @@ namespace PlannerApplication.Controllers
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
-            // Implement logic to authenticate user
            
 
             return RedirectToAction("Index");
